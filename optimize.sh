@@ -54,9 +54,6 @@ net.ipv4.tcp_keepalive_time = 600
 net.ipv4.tcp_keepalive_probes = 3
 net.ipv4.tcp_keepalive_intvl = 15
 
-# BBR相关
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control = bbr
 EOF
 
     # 系统限制(小内存版)
@@ -103,9 +100,6 @@ net.ipv4.tcp_keepalive_time = 300
 net.ipv4.tcp_keepalive_probes = 5
 net.ipv4.tcp_keepalive_intvl = 15
 
-# BBR相关
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control = bbr
 EOF
 
     # 系统限制(中等配置版)
@@ -158,10 +152,6 @@ net.ipv4.ip_local_port_range = 1024 65535
 net.ipv4.tcp_keepalive_time = 300
 net.ipv4.tcp_keepalive_probes = 5
 net.ipv4.tcp_keepalive_intvl = 15
-
-# BBR相关
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control = bbr
 
 # 提高UDP性能
 net.core.rmem_default = 8388608
@@ -219,8 +209,8 @@ optimize_dns() {
     
     # 设置新的DNS服务器
     cat > /etc/resolv.conf << EOF
-nameserver 8.8.8.8
-nameserver 1.1.1.1
+nameserver 8.8.4.4
+nameserver 1.0.0.1
 EOF
     
     # 如果系统支持，才使用chattr
