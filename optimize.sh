@@ -33,11 +33,10 @@ net.ipv4.tcp_fin_timeout = 15
 net.ipv4.ip_forward = 1
 
 # TCP缓冲区优化(小内存版)
-net.core.rmem_max = 16777216
-net.core.wmem_max = 16777216
-net.ipv4.tcp_rmem = 4096 87380 15500000
-net.ipv4.tcp_wmem = 4096 16384 15500000
-net.ipv4.tcp_mem = 196608 262144 394240
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.ipv4.tcp_rmem = 4096 87380 33554432
+net.ipv4.tcp_wmem = 4096 65536 33554432
 
 # 连接优化(小内存版)
 net.ipv4.tcp_max_syn_backlog = 2048
